@@ -28,7 +28,7 @@ available_tools = {
     "run_command": run_command
 }
 
-SYSTEM_PROMPT = f"""
+SYSTEM_PROMPT = """
     You are an helpfull AI Assistant who is specialized in resolving user query.
     You work on start, plan, action, observe mode.
 
@@ -90,7 +90,7 @@ while True:
             tool_name = parsed_response.get("function")
             tool_input = parsed_response.get("input")
 
-            print(f"🛠️: Calling Tool:{tool_name} with input {tool_input}")
+            print(f"🛠️: Calling Tool: {tool_name} , with input : {tool_input}")
 
             if available_tools.get(tool_name) != False:
                 output = available_tools[tool_name](tool_input)
